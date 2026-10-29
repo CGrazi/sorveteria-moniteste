@@ -14,10 +14,10 @@ export function SiteFooter() {
         <nav aria-label="Cardápio">
           <p className="font-display text-xl font-bold">Cardápio</p>
           <ul className="mt-4 space-y-2 font-bold">
-            <li><Link to="/" hash="sabores" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Nossos sabores</Link></li>
-            <li><Link to="/" hash="milkshakes" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Milk shakes</Link></li>
-            <li><Link to="/" hash="tacas" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Taças</Link></li>
-            <li><Link to="/" hash="inverno" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Cardápio de inverno</Link></li>
+            <li><Link to="/cardapio" hash="sabores" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Nossos sabores</Link></li>
+            <li><Link to="/cardapio" hash="milkshakes" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Milk shakes</Link></li>
+            <li><Link to="/cardapio" hash="tacas" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Taças</Link></li>
+            <li><Link to="/cardapio" hash="inverno" className="opacity-90 transition-opacity hover:opacity-100 hover:underline">Cardápio de inverno</Link></li>
           </ul>
         </nav>
 

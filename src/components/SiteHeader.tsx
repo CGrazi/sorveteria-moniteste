@@ -26,7 +26,7 @@ export function SiteHeader() {
 
         <nav aria-label="Menu principal" className="hidden items-center gap-1 text-sm font-bold lg:flex">
           {menuItens.map((item) => (
-            <Link key={item.hash} to="/" hash={item.hash} className="rounded-full px-4 py-2 transition-colors hover:bg-cream">
+            <Link key={item.hash} to="/cardapio" hash={item.hash} className="rounded-full px-4 py-2 transition-colors hover:bg-cream">
               {item.label}
             </Link>
           ))}
@@ -66,7 +66,7 @@ export function SiteHeader() {
           <ul className="flex flex-col gap-1 text-base font-bold">
             {menuItens.map((item) => (
               <li key={item.hash}>
-                <Link to="/" hash={item.hash} onClick={() => setAberto(false)} className="block rounded-2xl px-4 py-3 hover:bg-cream">
+                <Link to="/cardapio" hash={item.hash} onClick={() => setAberto(false)} className="block rounded-2xl px-4 py-3 hover:bg-cream">
                   {item.label}
                 </Link>
               </li>

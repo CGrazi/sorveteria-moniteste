@@ -30,7 +30,7 @@ function FlavorPage() {
   const [qtd, setQtd] = useState(1);
   return (
     <div className="mx-auto max-w-6xl px-6 py-8">
-      <Link to="/" hash="sabores" className="inline-flex items-center gap-2 font-bold opacity-70 hover:opacity-100"><ArrowLeft className="h-4 w-4" /> Voltar ao cardápio</Link>
+      <Link to="/cardapio" className="inline-flex items-center gap-2 font-bold opacity-70 hover:opacity-100"><ArrowLeft className="h-4 w-4" /> Voltar ao cardápio</Link>
       <div className="mt-6 grid gap-10 md:grid-cols-2">
         <img src={flavor.img} alt={flavor.nome} width={1024} height={1024} className={`${flavor.bg} aspect-square w-full rounded-[2rem] object-cover shadow-xl`} />
         <div>

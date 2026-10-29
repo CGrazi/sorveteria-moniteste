@@ -30,12 +30,12 @@ function FlavorPage() {
   const [qtd, setQtd] = useState(1);
   return (
     <div className="mx-auto max-w-6xl px-6 py-8">
-      <Link to="/" hash="sabores" className="inline-flex items-center gap-2 font-bold opacity-70 hover:opacity-100"><ArrowLeft className="h-4 w-4" /> Voltar aos sabores</Link>
+      <Link to="/" hash="sabores" className="inline-flex items-center gap-2 font-bold opacity-70 hover:opacity-100"><ArrowLeft className="h-4 w-4" /> Voltar ao cardápio</Link>
       <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <img src={flavor.img} alt={flavor.nome} width={816} height={816} className={`${flavor.bg} aspect-square w-full rounded-[2rem] object-cover shadow-xl`} />
+        <img src={flavor.img} alt={flavor.nome} width={1024} height={1024} className={`${flavor.bg} aspect-square w-full rounded-[2rem] object-cover shadow-xl`} />
         <div>
           <h1 className="font-display text-5xl font-bold">{flavor.nome}</h1>
-          <p className="mt-2 font-display text-3xl font-bold text-primary">{brl(flavor.preco)} <span className="text-base font-normal opacity-70">/ pote 300ml</span></p>
+          <p className="mt-2 font-display text-3xl font-bold text-primary">{brl(flavor.preco)} <span className="text-base font-normal opacity-70">/ {flavor.unidade}</span></p>
           <p className="mt-6 text-lg opacity-80">{flavor.detalhes}</p>
           <h2 className="mt-8 font-display text-xl font-bold">Ingredientes</h2>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -52,7 +52,7 @@ function FlavorPage() {
               className="rounded-full bg-primary px-8 py-4 font-bold text-primary-foreground transition-transform hover:scale-105"
             >Adicionar ao carrinho</button>
           </div>
-          <a href={whatsappLink(`Olá! Quero pedir ${qtd}x sorvete de ${flavor.nome}.`)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block font-bold text-whatsapp underline">Ou peça este sabor pelo WhatsApp</a>
+          <a href={whatsappLink(`Olá! Quero pedir ${qtd}x ${flavor.nome}.`)} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block font-bold text-whatsapp underline">Ou peça pelo WhatsApp</a>
         </div>
       </div>
     </div>

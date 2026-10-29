@@ -14,9 +14,9 @@ export const Route = createFileRoute("/sabores/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `Sorvete de ${loaderData.flavor.nome} — Moniteste` },
+          { title: `${loaderData.flavor.nome} — Moniteste` },
           { name: "description", content: loaderData.flavor.detalhes },
-          { property: "og:title", content: `Sorvete de ${loaderData.flavor.nome} — Moniteste` },
+          { property: "og:title", content: `${loaderData.flavor.nome} — Moniteste` },
           { property: "og:description", content: loaderData.flavor.detalhes },
         ]
       : [{ title: "Sabor não encontrado — Moniteste" }, { name: "robots", content: "noindex" }],

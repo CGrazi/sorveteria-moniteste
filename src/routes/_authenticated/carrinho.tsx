@@ -40,8 +40,8 @@ function CartPage() {
 
   const checkout = async () => {
     if (!items.length) return;
-    if (!name.trim() || !phone.trim()) return toast.error("Informe nome e telefone");
-    if (delivery === "entrega" && !address.trim()) return toast.error("Informe o endereço de entrega");
+    if (!name.trim() || !phone.trim()) { toast.error("Informe nome e telefone"); return; }
+    if (delivery === "entrega" && !address.trim()) { toast.error("Informe o endereço de entrega"); return; }
     setBusy(true);
     const { data: u } = await supabase.auth.getUser();
     if (!u.user) { setBusy(false); return; }
@@ -57,7 +57,7 @@ function CartPage() {
       notes: notes.trim().slice(0, 500) || null,
     });
     setBusy(false);
-    if (error) return toast.error("Não foi possível salvar o pedido");
+    if (error) { toast.error("Não foi possível salvar o pedido"); return; }
     clear();
     toast.success("Pedido recebido! Pagamento na " + (delivery === "entrega" ? "entrega." : "retirada."));
     navigate({ to: "/pedidos" });

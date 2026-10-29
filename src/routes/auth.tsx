@@ -39,7 +39,7 @@ function AuthPage() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = schema.safeParse({ email, password, name: mode === "signup" ? name : undefined });
-    if (!parsed.success) return toast.error(parsed.error.issues[0].message);
+    if (!parsed.success) { toast.error(parsed.error.issues[0]?.message ?? "Dados inválidos"); return; }
     setBusy(true);
     if (mode === "signup") {
       const { error } = await supabase.auth.signUp({

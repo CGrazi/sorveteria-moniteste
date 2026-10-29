@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { supabase } from "@/integrations/supabase/client";
 import { CartProvider } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -134,7 +135,7 @@ function RootComponent() {
           <SiteHeader />
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
-          <footer className="py-8 text-center text-sm opacity-70">© 2026 Moniteste Sorveteria</footer>
+          <SiteFooter />
         </div>
         <WhatsAppButton />
         <Toaster position="top-center" />

@@ -50,11 +50,11 @@ export const flavors: Flavor[] = [
   { slug: "inverno-waffle", nome: "Waffle quente com sorvete", desc: "Quentinho, com calda e canela", detalhes: "Waffle dourado feito na hora, servido quentinho com uma bola de sorvete de baunilha, calda de chocolate e canela polvilhada.", ingredientes: ["Waffle artesanal", "Sorvete de baunilha", "Calda de chocolate", "Canela"], preco: 24, img: invernoWaffle, bg: "bg-mint", categoria: "inverno", unidade: "prato individual" },
 ];
 
-export const categorias: { id: Categoria; titulo: string; subtitulo: string }[] = [
-  { id: "sorvete", titulo: "Nossos sabores", subtitulo: "Clique em um sabor para ver os detalhes." },
-  { id: "milkshake", titulo: "Milk shakes", subtitulo: "Batidos na hora, bem cremosos." },
-  { id: "taca", titulo: "Taças", subtitulo: "Montadas com capricho para saborear sem pressa." },
-  { id: "inverno", titulo: "Cardápio de inverno", subtitulo: "Delícias quentinhas para os dias frios." },
+export const categorias: { id: Categoria; titulo: string; subtitulo: string; anchor: string }[] = [
+  { id: "sorvete", titulo: "Nossos sabores", subtitulo: "Clique em um sabor para ver os detalhes.", anchor: "sabores" },
+  { id: "milkshake", titulo: "Milk shakes", subtitulo: "Batidos na hora, bem cremosos.", anchor: "milkshakes" },
+  { id: "taca", titulo: "Taças", subtitulo: "Montadas com capricho para saborear sem pressa.", anchor: "tacas" },
+  { id: "inverno", titulo: "Cardápio de inverno", subtitulo: "Delícias quentinhas para os dias frios.", anchor: "inverno" },
 ];
 
 export const getFlavor = (slug: string) => flavors.find((f) => f.slug === slug);

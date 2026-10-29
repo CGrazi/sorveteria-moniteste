@@ -37,7 +37,7 @@ function Index() {
           const itens = flavors.filter((f) => f.categoria === cat.id);
           const inverno = cat.id === "inverno";
           return (
-            <section key={cat.id} className={inverno ? "mt-16 rounded-[2rem] bg-mint p-6 md:p-10" : "mt-16 first:mt-0"}>
+            <section key={cat.id} id={cat.anchor} className={`scroll-mt-24 ${inverno ? "mt-16 rounded-[2rem] bg-mint p-6 md:p-10" : "mt-16 first:mt-0"}`}>
               <div className="flex flex-wrap items-center gap-3">
                 <h2 className="font-display text-4xl font-bold">{cat.titulo}</h2>
                 {inverno && (

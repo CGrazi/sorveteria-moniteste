@@ -137,7 +137,7 @@ function RootComponent() {
           <footer className="py-8 text-center text-sm opacity-70">© 2026 Moniteste Sorveteria</footer>
         </div>
         <WhatsAppButton />
-        <Toaster />
+        <Toaster position="top-center" />
       </CartProvider>
     </QueryClientProvider>
   );

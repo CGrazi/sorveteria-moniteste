@@ -30,6 +30,7 @@
   --color-pink: var(--pink);
   --color-mint: var(--mint);
   --color-cream: var(--cream);
+  --color-whatsapp: oklch(0.62 0.16 150);
   --font-display: "Fredoka", sans-serif;
   --font-sans: "Nunito", sans-serif;
   --color-foreground: var(--foreground);

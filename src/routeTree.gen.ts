@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CardapioRouteImport } from './routes/cardapio'
+import { Route as PedidoRouteImport } from './routes/pedido'
+import { Route as RecomendacoesRouteImport } from './routes/recomendacoes'
 import { Route as AuthenticatedCarrinhoRouteImport } from './routes/_authenticated/carrinho'
 import { Route as AuthenticatedPedidosRouteImport } from './routes/_authenticated/pedidos'
 import { Route as AuthenticatedPerfilRouteImport } from './routes/_authenticated/perfil'
@@ -35,6 +37,16 @@ const AuthRoute = AuthRouteImport.update({
 const CardapioRoute = CardapioRouteImport.update({
   id: '/cardapio',
   path: '/cardapio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedidoRoute = PedidoRouteImport.update({
+  id: '/pedido',
+  path: '/pedido',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecomendacoesRoute = RecomendacoesRouteImport.update({
+  id: '/recomendacoes',
+  path: '/recomendacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedCarrinhoRoute = AuthenticatedCarrinhoRouteImport.update({
@@ -62,6 +74,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/cardapio': typeof CardapioRoute
+  '/pedido': typeof PedidoRoute
+  '/recomendacoes': typeof RecomendacoesRoute
   '/carrinho': typeof AuthenticatedCarrinhoRoute
   '/pedidos': typeof AuthenticatedPedidosRoute
   '/perfil': typeof AuthenticatedPerfilRoute
@@ -71,6 +85,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/cardapio': typeof CardapioRoute
+  '/pedido': typeof PedidoRoute
+  '/recomendacoes': typeof RecomendacoesRoute
   '/carrinho': typeof AuthenticatedCarrinhoRoute
   '/pedidos': typeof AuthenticatedPedidosRoute
   '/perfil': typeof AuthenticatedPerfilRoute
@@ -82,6 +98,8 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/cardapio': typeof CardapioRoute
+  '/pedido': typeof PedidoRoute
+  '/recomendacoes': typeof RecomendacoesRoute
   '/_authenticated/carrinho': typeof AuthenticatedCarrinhoRoute
   '/_authenticated/pedidos': typeof AuthenticatedPedidosRoute
   '/_authenticated/perfil': typeof AuthenticatedPerfilRoute
@@ -93,6 +111,8 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/cardapio'
+    | '/pedido'
+    | '/recomendacoes'
     | '/carrinho'
     | '/pedidos'
     | '/perfil'
@@ -102,6 +122,8 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/cardapio'
+    | '/pedido'
+    | '/recomendacoes'
     | '/carrinho'
     | '/pedidos'
     | '/perfil'
@@ -112,6 +134,8 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/cardapio'
+    | '/pedido'
+    | '/recomendacoes'
     | '/_authenticated/carrinho'
     | '/_authenticated/pedidos'
     | '/_authenticated/perfil'
@@ -123,6 +147,8 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   CardapioRoute: typeof CardapioRoute
+  PedidoRoute: typeof PedidoRoute
+  RecomendacoesRoute: typeof RecomendacoesRoute
   SaboresSlugRoute: typeof SaboresSlugRoute
 }
 
@@ -154,6 +180,20 @@ declare module '@tanstack/react-router' {
       path: '/cardapio'
       fullPath: '/cardapio'
       preLoaderRoute: typeof CardapioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedido': {
+      id: '/pedido'
+      path: '/pedido'
+      fullPath: '/pedido'
+      preLoaderRoute: typeof PedidoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recomendacoes': {
+      id: '/recomendacoes'
+      path: '/recomendacoes'
+      fullPath: '/recomendacoes'
+      preLoaderRoute: typeof RecomendacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/carrinho': {
@@ -207,6 +247,8 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   CardapioRoute: CardapioRoute,
+  PedidoRoute: PedidoRoute,
+  RecomendacoesRoute: RecomendacoesRoute,
   SaboresSlugRoute: SaboresSlugRoute,
 }
 export const routeTree = rootRouteImport

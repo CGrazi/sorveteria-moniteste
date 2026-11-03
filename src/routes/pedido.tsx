@@ -18,7 +18,7 @@ export const Route = createFileRoute("/pedido")({
   component: Page,
 });
 
-export function montarMensagem(items: { nome: string; qtd: number; preco: number }[], total: number, nome: string, entrega: string, obs: string) {
+function montarMensagem(items: { nome: string; qtd: number; preco: number }[], total: number, nome: string, entrega: string, obs: string) {
   const linhas = items.map((i) => `• ${i.qtd}x ${i.nome} — ${brl(i.preco * i.qtd)}`);
   return [
     "Olá, Moniteste! Quero fazer um pedido:",
@@ -26,10 +26,10 @@ export function montarMensagem(items: { nome: string; qtd: number; preco: number
     ...linhas,
     "",
     `Total: ${brl(total)}`,
-    nome && `Nome: ${nome}`,
+    ...(nome ? [`Nome: ${nome}`] : []),
     `Forma: ${entrega}`,
-    obs && `Obs.: ${obs}`,
-  ].filter((l) => l !== false && l !== "" || l === "").join("\n");
+    ...(obs ? [`Obs.: ${obs}`] : []),
+  ].join("\n");
 }
 
 function Page() {

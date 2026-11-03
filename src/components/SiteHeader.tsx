@@ -30,6 +30,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Link to="/recomendacoes" className="rounded-full px-4 py-2 text-primary transition-colors hover:bg-cream">Pra você ✨</Link>
         </nav>
 
         <div className="flex items-center gap-2 text-sm font-bold">

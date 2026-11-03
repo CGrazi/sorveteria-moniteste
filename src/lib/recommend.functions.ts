@@ -12,7 +12,7 @@ export const recomendar = createServerFn({ method: "POST" })
     restricoes: String(d?.restricoes ?? "").slice(0, 500),
   }))
   .handler(async ({ data }): Promise<{ itens: Recomendacao[]; intro: string; error?: string }> => {
-    const key = process.env.LOVABLE_API_KEY;
+    const key = process.env['LOVABLE_API_KEY'];
     if (!key) return { itens: [], intro: "", error: "Recomendações indisponíveis no momento." };
     if (!data.gostos.trim() && !data.restricoes.trim())
       return { itens: [], intro: "", error: "Conte um pouco do que você gosta." };
